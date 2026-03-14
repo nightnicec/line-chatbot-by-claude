@@ -4,7 +4,7 @@ const axios = require("axios");
 const Anthropic = require("@anthropic-ai/sdk");
 
 const app = express();
-require('dotenv').config();
+//require('dotenv').config();
 
 // ===== CONFIG =====
 const LINE_CHANNEL_SECRET = process.env.LINE_CHANNEL_SECRET;
