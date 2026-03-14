@@ -12,6 +12,8 @@ const LINE_CHANNEL_ACCESS_TOKEN = process.env.LINE_CHANNEL_ACCESS_TOKEN;
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
 const PORT = process.env.PORT || 3000;
 
+
+
 // ===== Anthropic Client =====
 const anthropic = new Anthropic({ apiKey: ANTHROPIC_API_KEY });
 
@@ -109,4 +111,7 @@ app.get("/", (req, res) => {
 app.listen(PORT, () => {
   console.log(`✅ Server running on port ${PORT}`);
   //console.log(`📌 Webhook URL: http://YOUR_DOMAIN/webhook`);
+  console.log("SECRET:", process.env.LINE_CHANNEL_SECRET ? "✅ found" : "❌ undefined");
+console.log("TOKEN:", process.env.LINE_CHANNEL_ACCESS_TOKEN ? "✅ found" : "❌ undefined");
+console.log("ANTHROPIC:", process.env.ANTHROPIC_API_KEY ? "✅ found" : "❌ undefined");
 });
